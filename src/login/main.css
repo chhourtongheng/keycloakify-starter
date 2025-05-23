@@ -1,0 +1,34 @@
+body.kcBodyClass {
+    /* background: url(./../login/pages/assets/coolbackgrounds-particles-flare.png) no-repeat center center fixed; */
+    background: linear-gradient(to right, #fff, #fff4d6);
+}
+
+/* #kc-header-wrapper>span{
+    border: red solid 1px;
+} */
+
+
+/* #d7860c  #cccccc*/
+
+.test{
+    border: solid 1px red;
+}
+
+#kc-header-wrapper {
+    user-select: none;
+}
+
+#kc-info-wrapper{
+    background-color: transparent;
+}
+
+.card-pf{
+    background-color: rgba(187, 187, 187, 0.4);
+    border-radius: 8px;
+    border-top: 8px solid var(--pf-global--primary-color--100);
+    box-shadow: var(--pf-global--BoxShadow--md);
+}
+
+:root {
+    --pf-global--primary-color--100: #FFCA28;
+}
