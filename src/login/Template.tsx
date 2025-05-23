@@ -58,10 +58,10 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
             <div  id="kc-header" className={kcClsx("kcHeaderClass")}>
                 <div id="kc-header-wrapper" className={kcClsx("kcHeaderWrapperClass")}>
                     {/* {msg("loginTitleHtml", realm.displayNameHtml)} */}
-                    <img src="https://www.interior.gov.kh/header-logo.png" draggable="false" width={500}/>
+                    <img src="	https://www.interior.gov.kh/header-logo.png" draggable="false" width={500}/>
                 </div>
             </div>
-            <div className="text-center" style={{ margin: "20px 0px" }}>
+            <div className="text-center" style={{ margin: "24px 0px" }}>
                 <div className="h1">
                     {msg("loginTitleHtml", realm.displayNameHtml)}
                 </div>

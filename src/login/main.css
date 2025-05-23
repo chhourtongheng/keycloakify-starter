@@ -1,13 +1,17 @@
 body.kcBodyClass {
     /* background: url(./../login/pages/assets/coolbackgrounds-particles-flare.png) no-repeat center center fixed; */
-    background: linear-gradient(to right, #fff, #fff4d6);
+    /* background: linear-gradient(to right, #fffbf0, #fdf0ca); */
+    background: radial-gradient(circle at 50% 40%, #ffffff, #fae8b4);
 }
 
 /* #kc-header-wrapper>span{
     border: red solid 1px;
 } */
 
-
+#particles-js{
+    overflow-y: scroll;
+    scrollbar-width: none; 
+}
 /* #d7860c  #cccccc*/
 
 .test{
