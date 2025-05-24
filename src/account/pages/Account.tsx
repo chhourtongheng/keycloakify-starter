@@ -17,7 +17,7 @@ export default function Account(props: PageProps<Extract<KcContext, { pageId: "a
         classes
     });
 
-    const { url, realm, messagesPerField, stateChecker, account, referrer } = kcContext;
+    const { url, realm, messagesPerField, stateChecker, account } = kcContext;
 
     const { msg } = i18n;
 

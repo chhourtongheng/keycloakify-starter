@@ -16,7 +16,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     const { msg, msgStr, currentLanguage, enabledLanguages } = i18n;
 
-    const { url, features, realm, message, referrer } = kcContext;
+    const { url, features, message, referrer } = kcContext;
 
     useEffect(() => {
         document.title = msgStr("accountManagementTitle");
