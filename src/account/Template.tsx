@@ -20,6 +20,25 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     useEffect(() => {
         document.title = msgStr("accountManagementTitle");
+        // Dynamically add the script
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js";
+        script.async = true;
+
+        script.onload = () => {
+            if (window.particlesJS) {
+            window.particlesJS.load("particles-js", "/particlesjs-config.json");
+            // window.particlesJS.load("particles-js", "/particlesjs-config.json", () => {
+            //     console.log("particlesjs-config.js loaded");
+            //   });
+            }
+        };
+
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+        };
     }, []);
 
     useSetClassName({
@@ -40,6 +59,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     return (
         <>
+            <div id="particles-js" style={{ position: "absolute", width: "100%", height: "100%", zIndex: -1 }}></div>
             <header className="navbar navbar-default navbar-pf navbar-main header">
                 <nav className="navbar" role="navigation">
                     <div className="navbar-header">
@@ -74,7 +94,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                     </li>
                                     
                                 )}
-                                <Button href={url.getLogoutUrl()} variant="contained">{msg("doSignOut")}</Button>
+                                <Button href={url.getLogoutUrl()} variant="outlined">{msg("doSignOut")}</Button>
                             </ul>
                         </div>
                     </div>

@@ -1,3 +1,27 @@
+body.kcBodyClass {
+    /* background: url(./../login/pages/assets/coolbackgrounds-particles-flare.png) no-repeat center center fixed; */
+    /* background: linear-gradient(to right, #fffbf0, #fdf0ca); */
+    background: radial-gradient(circle at 50% 40%, #ffffff, #fae8b4);
+}
+
+.remove_background{
+    background-color: transparent !important;
+}
+
+.content-area{
+    margin-top: 24px;
+    background-color: rgba(187, 187, 187, 0.4);
+    border-style: none !important;
+    box-shadow: var(--pf-global--BoxShadow--lg);
+}
+
+.bs-sidebar{
+    margin-top: 24px;
+    background-color: rgba(187, 187, 187, 0.4);
+    border-style: none !important;
+    box-shadow: var(--pf-global--BoxShadow--lg);
+}
+
 .test {
     border: solid 1px red;
 }
