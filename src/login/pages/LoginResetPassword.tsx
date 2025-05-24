@@ -1,4 +1,5 @@
 import { getKcClsx } from "keycloakify/login/lib/kcClsx";
+import { useEffect } from "react";
 import { kcSanitize } from "keycloakify/lib/kcSanitize";
 import type { PageProps } from "keycloakify/login/pages/PageProps";
 import type { KcContext } from "../KcContext";
@@ -12,11 +13,35 @@ export default function LoginResetPassword(props: PageProps<Extract<KcContext, {
         classes
     });
 
+    useEffect(() => {
+        // Dynamically add the script
+        const script = document.createElement("script");
+        script.src = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js";
+        script.async = true;
+
+        script.onload = () => {
+            if (window.particlesJS) {
+            window.particlesJS.load("particles-js", "/particlesjs-config.json");
+            // window.particlesJS.load("particles-js", "/particlesjs-config.json", () => {
+            //     console.log("particlesjs-config.js loaded");
+            //   });
+            }
+        };
+
+        document.body.appendChild(script);
+
+        return () => {
+            document.body.removeChild(script);
+        };
+    }, []);
+
     const { url, realm, auth, messagesPerField } = kcContext;
 
     const { msg, msgStr } = i18n;
 
     return (
+        <>
+        <div id="particles-js" style={{ position: "absolute", width: "100%", height: "100%", zIndex: -1 }}></div>
         <Template
             kcContext={kcContext}
             i18n={i18n}
@@ -79,5 +104,6 @@ export default function LoginResetPassword(props: PageProps<Extract<KcContext, {
                 </div>
             </form>
         </Template>
+        </>
     );
 }
