@@ -7,6 +7,7 @@ import { useInitialize } from "keycloakify/account/Template.useInitialize";
 import type { TemplateProps } from "keycloakify/account/TemplateProps";
 import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
+import Button from '@mui/material/Button';
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const { kcContext, i18n, doUseDefaultCss, active, classes, children } = props;
@@ -71,16 +72,14 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                                             {msg("backTo", referrer.name)}
                                         </a>
                                     </li>
+                                    
                                 )}
-                                <li>
-                                    <a href={url.getLogoutUrl()}>{msg("doSignOut")}</a>
-                                </li>
+                                <Button href={url.getLogoutUrl()} variant="contained">{msg("doSignOut")}</Button>
                             </ul>
                         </div>
                     </div>
                 </nav>
             </header>
-
             <div className="container">
                 <div className="bs-sidebar col-sm-3">
                     <ul>
