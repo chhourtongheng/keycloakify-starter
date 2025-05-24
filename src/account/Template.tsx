@@ -43,7 +43,7 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                 <nav className="navbar" role="navigation">
                     <div className="navbar-header">
                         <div className="container">
-                            <img src="https://www.interior.gov.kh/header-logo.png" draggable="false" width={150}/>
+                            <img src="https://www.interior.gov.kh/header-logo.png" draggable="false" width={200}/>
                         </div>
                     </div>
                     <div className="navbar-collapse navbar-collapse-1">

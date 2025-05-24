@@ -2,6 +2,21 @@
     border: solid 1px red;
 }
 
+.navbar-header{
+    border-bottom: none;
+    padding: 8px 0px;
+}
+
+.navbar-pf{
+    background-color: var(--pf-global--primary-color--100);
+}
+
 /* .navbar{
     background-color: var(--pf-global--primary-color--100);
 } */
+
+
+:root {
+    --pf-global--primary-color--100: #FFCA28;
+    --pf-global--primary-color--200: #d7860c;
+}
