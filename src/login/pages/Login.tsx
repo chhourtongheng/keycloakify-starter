@@ -13,6 +13,7 @@ import type { PageProps } from "keycloakify/login/pages/PageProps";
 import { getKcClsx, type KcClsx } from "keycloakify/login/lib/kcClsx";
 import type { KcContext } from "../KcContext";
 import type { I18n } from "../i18n";
+import particlesConfig from "./../../config/particlesjs-config.json";
 
 export default function Login(props: PageProps<Extract<KcContext, { pageId: "login.ftl" }>, I18n>) {
     const { kcContext, i18n, doUseDefaultCss, Template, classes } = props;
@@ -23,22 +24,15 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
     });
 
     useEffect(() => {
-        // Dynamically add the script
         const script = document.createElement("script");
         script.src = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js";
         script.async = true;
-
         script.onload = () => {
             if (window.particlesJS) {
-            window.particlesJS.load("particles-js", "/particlesjs-config.json");
-            // window.particlesJS.load("particles-js", "/particlesjs-config.json", () => {
-            //     console.log("particlesjs-config.js loaded");
-            //   });
+                window.particlesJS("particles-js", particlesConfig);
             }
         };
-
         document.body.appendChild(script);
-
         return () => {
             document.body.removeChild(script);
         };

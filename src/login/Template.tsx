@@ -61,11 +61,6 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
                     <img src="	https://www.interior.gov.kh/header-logo.png" draggable="false" width={500}/>
                 </div>
             </div>
-            <div className="text-center" style={{ margin: "24px 0px" }}>
-                <div className="h1">
-                    {msg("loginTitleHtml", realm.displayNameHtml)}
-                </div>
-            </div>
             <div className={kcClsx("kcFormCardClass")}>
                 <header className={kcClsx("kcFormHeaderClass")}>
                     {enabledLanguages.length > 1 && (

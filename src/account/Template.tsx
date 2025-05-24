@@ -8,6 +8,7 @@ import type { TemplateProps } from "keycloakify/account/TemplateProps";
 import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
 import Button from '@mui/material/Button';
+import particlesConfig from "./../config/particlesjs-config.json";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const { kcContext, i18n, doUseDefaultCss, active, classes, children } = props;
@@ -20,22 +21,23 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     useEffect(() => {
         document.title = msgStr("accountManagementTitle");
-        // Dynamically add the script
+    
         const script = document.createElement("script");
         script.src = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js";
         script.async = true;
-
+    
         script.onload = () => {
-            if (window.particlesJS) {
-            window.particlesJS.load("particles-js", "/particlesjs-config.json");
-            // window.particlesJS.load("particles-js", "/particlesjs-config.json", () => {
-            //     console.log("particlesjs-config.js loaded");
-            //   });
-            }
+            const interval = setInterval(() => {
+                const container = document.getElementById("particles-js");
+                if (window.particlesJS && container) {
+                    window.particlesJS("particles-js", particlesConfig);
+                    clearInterval(interval);
+                }
+            }, 100); // check every 100ms
         };
-
+    
         document.body.appendChild(script);
-
+    
         return () => {
             document.body.removeChild(script);
         };
