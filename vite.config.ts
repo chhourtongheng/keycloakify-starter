@@ -8,7 +8,7 @@ export default defineConfig({
         react(),
         keycloakify({
             accountThemeImplementation: "Multi-Page",
-            themeName: "my-theme",
+            themeName: "my-theme-gdhr",
         })
     ]
 });
